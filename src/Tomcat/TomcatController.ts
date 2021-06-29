@@ -164,10 +164,10 @@ export class TomcatController {
     public async startServer(operationId: string, tomcatServer: TomcatServer): Promise<void> {
         const server: TomcatServer = tomcatServer ? tomcatServer : await this.selectServer(operationId, true);
         if (server) {
-            if (server.isStarted()) {
-                vscode.window.showInformationMessage(DialogMessage.serverRunning);
-                return;
-            }
+            // if (server.isStarted()) {
+            //     vscode.window.showInformationMessage(DialogMessage.serverRunning);
+            //     return;
+            // }
             await this.startTomcat(operationId, server);
         }
     }
